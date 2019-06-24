@@ -1,0 +1,7 @@
+In this Java 8 tutorial, 
+Learn to read files line 
+by line using java IO and 
+perform some operations on the lines. 
+Before moving ahead, 
+let me mention the file content 
+which I will read in all examples in this post.

@@ -30,4 +30,29 @@ public class MyClass {
 		return "MyClass [intProperty=" + intProperty + ", stringProperty=" + stringProperty + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((intProperty == null) ? 0 : intProperty.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MyClass other = (MyClass) obj;
+		if (intProperty == null) {
+			if (other.intProperty != null)
+				return false;
+		} else if (!intProperty.equals(other.intProperty))
+			return false;
+		return true;
+	}
+
 }
