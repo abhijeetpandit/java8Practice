@@ -1,3 +1,4 @@
+package org.abhi.beans;
 public class MyClass {
 	private Integer intProperty = 0;
 	private String stringProperty = null;

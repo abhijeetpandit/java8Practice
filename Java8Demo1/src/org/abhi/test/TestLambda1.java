@@ -1,7 +1,10 @@
+package org.abhi.test;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import org.abhi.beans.MyClass;
 
 public class TestLambda1 {
 	public static void main(String[] args) {
