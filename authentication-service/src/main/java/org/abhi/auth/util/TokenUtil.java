@@ -5,12 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
 
-import org.abhi.auth.beans.UserInfo;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -30,7 +29,7 @@ public class TokenUtil {
 		this.secret = secret;
 	}
 	
-	public String generateToken(UserInfo userDetails) {
+	public String generateToken(UserDetails userDetails) {
 		Map<String, Object> claims = new HashMap<>();
 		claims.put(Claims.SUBJECT, userDetails.getUsername());
 		long currentTimeMillis = System.currentTimeMillis();
@@ -47,7 +46,7 @@ public class TokenUtil {
 		return new Date(System.currentTimeMillis()).after(getClaimFromToken(token, Claims::getExpiration));
 	}
 	
-	public boolean validateToken(String token, UserInfo userDetails) {
+	public boolean validateToken(String token, UserDetails userDetails) {
 		String username = getUserNameFromToken(token);
 		return username.equals(userDetails.getUsername()) && !isTokenExpired(token);
 	}

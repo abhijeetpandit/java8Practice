@@ -6,8 +6,13 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserInfo implements UserDetails {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
+	private Collection<Authority> authorities;
 
 	public String getUsername() {
 		return username;
@@ -30,16 +35,19 @@ public class UserInfo implements UserDetails {
 		return "LoginRequest [username=" + username + ", password=" + password + "]";
 	}
 
+	public void setAuthorities(Collection<Authority> authorities) {
+		this.authorities = authorities;
+	}
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		Granted
-		return null;
+		return this.authorities;
 	}
 
 	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
