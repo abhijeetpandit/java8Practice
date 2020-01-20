@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "9dba5817-0a2b-4093-a2e7-72f6315f6ba0",
+		"name": "authentication-service-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n\t\t\"userName\":\"abhijeet\",\n\t\t\"password\":\"123456\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hello",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhYmhpamVldCIsImV4cCI6MTU3OTUyMTIxMDIyMiwiaWF0IjoxNTc5NTIxMTUwMjIyfQ.Y-4FWUGL-d8Gg-1TNdMdcPC7g_44FsyD5TRTvJDglxZAySPno-uedrv7N-jP9i9z-xlTbT9b_BYXlIWAx6MNIA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8888/hello-service/hello",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"hello-service",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

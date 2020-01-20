@@ -35,7 +35,7 @@ public class AuthenticationController {
 	static {
 		UserInfo abhijeetDetails = new UserInfo();
 		abhijeetDetails.setUsername("abhijeet");
-		abhijeetDetails.setPassword("$2a$10$eiXPVzxo4sEi3sDxu1fJ7edpd2eESqotp1kohPEfIED.ZGNVK.erG");
+		abhijeetDetails.setPassword("$2a$10$L5etz.hZIzk5xS9FAHRHuuTa4QYJ3tt1LZ..Tnl1HxvYMrO.35/.O");
 		abhijeetDetails.setAuthorities(AuthoritiesBuilder.getAdminAuthorities());
 		map.put("abhijeet", abhijeetDetails);
 		
